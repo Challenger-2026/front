@@ -1,0 +1,177 @@
+/* ========================================================
+   1. VARIÁVEIS DE CORES (Regra 60/30/10) E TIPOGRAFIA
+======================================================== */
+:root {
+    /* 60% Dominante - Fundo */
+    --cor-dominante: #F4EEDD; 
+    
+    /* 30% Secundária - Elementos de destaque e botões */
+    --cor-secundaria: #D35400; 
+    
+    /* 10% Destaque/Acento - Textos principais e detalhes */
+    --cor-acento: #1C1C1C; 
+    
+    /* Variáveis Extras de Apoio */
+    --cor-fundo-card: #FFFFFF;
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========================================================
+   2. RESET BÁSICO E LAYOUT GERAL
+======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-dominante);
+    color: var(--cor-acento);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+}
+
+/* ========================================================
+   3. CABEÇALHO E NAVEGAÇÃO
+======================================================== */
+.cabecalho-principal {
+    background-color: var(--cor-acento);
+    color: var(--cor-dominante);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho-principal h1 {
+    font-size: 1.8rem;
+    color: var(--cor-secundaria); /* Toque da cor do lobo no logo */
+}
+
+.menu-navegacao ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu-navegacao a {
+    color: var(--cor-dominante);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.menu-navegacao a:hover, 
+.menu-navegacao a.ativo {
+    color: var(--cor-secundaria);
+}
+
+/* ========================================================
+   4. SEÇÕES PRINCIPAIS (HERO E CARDS)
+======================================================== */
+.hero-section {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Botão utilizando a cor secundária (30%) */
+.btn-primary {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-dominante);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #A04000; /* Tom mais escuro para o hover */
+    transform: scale(1.05);
+}
+
+/* Layout de Cards (Demonstração de estrutura limpa) */
+.destaques {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 5%;
+    flex-wrap: wrap; /* Ajuda na responsividade inicial */
+}
+
+.card-info {
+    background-color: var(--cor-fundo-card);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 600px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--cor-secundaria);
+}
+
+.card-info h3 {
+    margin-bottom: 1rem;
+    color: var(--cor-acento);
+}
+
+/* ========================================================
+   5. RODAPÉ
+======================================================== */
+footer {
+    background-color: var(--cor-acento);
+    color: var(--cor-dominante);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+/* ========================================================
+   6. RESPONSIVIDADE (Critério 7)
+======================================================== */
+
+/* Tablet (Telas até 768px) */
+@media (max-width: 768px) {
+    .cabecalho-principal {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .menu-navegacao ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (Telas até 480px) */
+@media (max-width: 480px) {
+    .destaques {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-info {
+        width: 100%; /* Ocupa toda a tela no celular */
+    }
+
+    .menu-navegacao ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
