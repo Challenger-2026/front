@@ -138,6 +138,365 @@ footer {
 }
 
 /* ========================================================
+   7. ESTILOS ESPECÍFICOS: QUEM SOMOS / INTEGRANTES
+======================================================== */
+
+.intro-quem-somos {
+    text-align: center;
+    padding: 3rem 5%;
+}
+
+.grid-integrantes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Garante que os cards quebrem de linha se não couberem */
+    gap: 2.5rem;
+    padding: 0 5% 4rem 5%;
+}
+
+.card-integrante {
+    background-color: var(--cor-fundo-card);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 280px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(28, 28, 28, 0.1); /* 10% de detalhe escuro */
+}
+
+.card-integrante:hover {
+    transform: translateY(-10px);
+}
+
+.foto-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Garante que a foto não fique esticada */
+    filter: grayscale(20%); /* Toque artístico opcional */
+}
+
+.info-integrante {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.info-integrante h3 {
+    color: var(--cor-acento);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.info-integrante p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.links-sociais {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+/* Botões sociais usando a cor 30% (Secundária) */
+.btn-social {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-dominante);
+}
+
+/* Responsividade para a página de Integrantes */
+@media (max-width: 480px) {
+    .grid-integrantes {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card-integrante {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* ========================================================
+   8. ESTILOS ESPECÍFICOS: PÁGINA SOBRE
+======================================================== */
+
+.container-sobre {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+}
+
+.secao-sobre {
+    margin-bottom: 4rem;
+}
+
+.secao-sobre h2 {
+    color: var(--cor-secundaria); /* 30% da paleta para títulos */
+    border-bottom: 2px solid var(--cor-secundaria);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.secao-destaque {
+    background-color: var(--cor-acento); /* 10% - Contraste forte */
+    color: var(--cor-dominante);
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+.secao-destaque h2 {
+    color: var(--cor-secundaria);
+    border-color: var(--cor-secundaria);
+}
+
+/* Estilização da Lista de Tecnologias */
+.lista-tecnologias {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.lista-tecnologias li {
+    background: var(--cor-fundo-card);
+    padding: 1.5rem;
+    border-left: 5px solid var(--cor-secundaria);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Estilização do Roadmap (Timeline simples) */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-left: 3px dashed var(--cor-acento);
+    padding-left: 2rem;
+    margin-left: 1rem;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+/* Pequeno círculo da timeline */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.45rem;
+    top: 0.5rem;
+    width: 15px;
+    height: 15px;
+    background-color: var(--cor-secundaria);
+    border-radius: 50%;
+}
+
+/* Responsividade para a Página Sobre */
+@media (max-width: 768px) {
+    .secao-destaque {
+        padding: 1.5rem;
+    }
+    
+    .secao-sobre h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* ========================================================
+   9. ESTILOS ESPECÍFICOS: FAQ (ACCORDION)
+======================================================== */
+
+.container-faq {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 5%;
+}
+
+.introducao-faq {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: var(--cor-fundo-card);
+    border-radius: 8px;
+    border: 1px solid rgba(211, 84, 0, 0.2); /* Sutil toque da cor secundária */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: var(--cor-fundo-card);
+    color: var(--cor-acento);
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(211, 84, 0, 0.1);
+    color: var(--cor-secundaria);
+}
+
+/* Ícone indicativo (pode ser substituído por imagem se preferir) */
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--cor-secundaria);
+}
+
+/* Estado ativo do botão */
+.faq-item.active .faq-question {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-dominante);
+}
+
+.faq-item.active .faq-question::after {
+    content: '-';
+    color: var(--cor-dominante);
+}
+
+/* Esconde a resposta por padrão */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background-color: #fff;
+}
+
+.faq-answer p {
+    padding: 1.5rem;
+}
+
+/* Quando o item está ativo, mostra a resposta */
+.faq-item.active .faq-answer {
+    max-height: 500px; /* Valor alto o suficiente para o conteúdo */
+}
+
+/* ========================================================
+   10. ESTILOS ESPECÍFICOS: PÁGINA DE CONTATO
+======================================================== */
+
+.container-contato {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 5%;
+}
+
+.info-contato {
+    flex: 1;
+}
+
+.info-contato h2 {
+    color: var(--cor-secundaria); /* 30% da paleta */
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.dados-contato {
+    margin-top: 2rem;
+    background-color: var(--cor-acento); /* 10% - Contraste */
+    color: var(--cor-dominante);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.secao-formulario {
+    flex: 1.5;
+    background-color: var(--cor-fundo-card);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.grupo-input {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-input label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--cor-acento);
+}
+
+.grupo-input input, 
+.grupo-input textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.grupo-input input:focus, 
+.grupo-input textarea:focus {
+    outline: none;
+    border-color: var(--cor-secundaria); /* Feedback visual de foco */
+}
+
+/* Estilos de Feedback Visual (Critério 9) */
+.feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.erro {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.sucesso {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Responsividade do Contato (Critério 7) */
+@media (max-width: 768px) {
+    .container-contato {
+        flex-direction: column;
+        margin: 2rem auto;
+    }
+}
+
+/* ========================================================
    6. RESPONSIVIDADE (Critério 7)
 ======================================================== */
 

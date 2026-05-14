@@ -3,63 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lobo-guará Tech | Início</title>
+    <title>Lobo-guará Tech | Contato</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/main.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
 
     <header class="cabecalho-principal">
         <div class="logo">
-            <!-- Insira a imagem do logo do projeto na tag abaixo -->
-             <a href="../index.html"><img src="../assets/img/Guara.PNG" alt="Lobo-guará Tech" width="100px"></a>
+            <a href="../index.html"><img src="../img/Guara.PNG" alt="Lobo-guará Tech" width="100px"></a>
             <h1>Lobo-guará Tech</h1>
-
         </div>
-        
         <nav class="menu-navegacao">
             <ul>
-                <li><a href="../index.html" class="ativo">Início</a></li>
+                <li><a href="../index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="solucao.html">Nossa Solução</a></li> 
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="integrantes.html">Integrantes</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="contato.html" class="ativo">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <!-- Apenas um h1 por página foi utilizado (no header), agora usamos h2 em diante -->
-        <section class="hero-section">
-            <div class="conteudo-hero">
-                <h2>Tecnologia com DNA Brasileiro</h2>
-                <p>
-                    <!-- Escreva aqui um parágrafo de impacto apresentando o problema que a Lobo-guará Tech resolve (ex: engajamento sustentável, gamificação, etc). -->
-                </p>
-                <a href="sobre.html" class="btn-primary">Conheça o Projeto</a>
+    <main class="container-contato">
+        <section class="info-contato">
+            <h2>Fale Conosco</h2>
+            <p><!-- Escreva aqui um convite para o usuário entrar em contato sobre parcerias ou dúvidas --></p>
+            
+            <div class="dados-contato">
+                <p><strong>E-mail:</strong> contato@loboguaratech.com.br</p>
+                <p><strong>Telefone:</strong> (11) 4002-8922</p>
+                <p><strong>Localização:</strong> São Paulo, SP - FIAP</p>
             </div>
         </section>
 
-        <section class="destaques">
-            <article class="card-info">
-                <h3>Descrição</h3>
-                <p>O projeto Lobo-guará Tech busca solucionar a lacuna de transformar ações sustentáveis, em um sistema de recompensa e desafios, com rankeamento, atingindo o usuário e seu ciclo de engajamento, pensando em seus objetivos e motivações. Indo de encontro com a junção das inovações incremental e disruptiva, conectando mecanismos já existentes com as lacunas presentes na sustentabilidade. Criamos, assim, um Sistema de Gamificação Sustentável integrado à plataforma, com rankeamento, desenvolvido para transformar ações sustentáveis em recompensas tangíveis, relacionado diretamente à lacuna de transformar ações sustentáveis, em um sistema de recompensa e desafios, com rankeamento, atingindo o usuário e seu ciclo de engajamento, pensando em seus objetivos e motivações.</p>
-            </article>
+        <section class="secao-formulario">
+            <!-- Formulário com ID para manipulação via JavaScript (Critério 9) -->
+            <form id="form-contato" class="formulario-estilizado">
+                <div class="grupo-input">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome aqui">
+                </div>
 
-            <article class="card-info">
-                <h3>Objetivo</h3>
-                <p>O objetivo do trabalho foi entender o problema “transformar ações sustentáveis, em um sistema de recompensa e desafios, com rankeamento, atingindo o usuário e seu ciclo de engajamento, pensando em seus objetivos e motivações”, trazendo o usuário como centro da resolução e respeitando seus objetivos e motivações, tornando a sustentabilidade não apenas uma escolha consciente, mas um hábito reforçado por recompensas reais. Trazendo, assim, uma ferramenta que escala o impacto ambiental de forma ágil, transformando o compromisso com o planeta em um hábito digital recompensador.
-                </p>
-            </article>
+                <div class="grupo-input">
+                    <label for="email">E-mail Corporativo:</label>
+                    <input type="email" id="email" name="email" placeholder="email@exemplo.com">
+                </div>
 
+                <div class="grupo-input">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos ajudar?"></textarea>
+                </div>
+
+                <!-- Botão claro e fácil de usar (Critério 5) -->
+                <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                
+                <!-- Áreas para feedback visual (Critério 9) -->
+                <p id="msg-erro" class="feedback erro" style="display: none;"></p>
+                <p id="msg-sucesso" class="feedback sucesso" style="display: none;">Sua mensagem foi enviada com sucesso! Logo entraremos em contato.</p>
+            </form>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Lobo-guará Tech. Todos os direitos reservados.</p>
-        <!-- Escreva aqui ou adicione links para redes sociais, se houver -->
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
