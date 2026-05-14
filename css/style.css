@@ -1,24 +1,13 @@
-/* ========================================================
-   1. VARIÁVEIS DE CORES (Regra 60/30/10) E TIPOGRAFIA
-======================================================== */
+/* Cores na regra 60/30/10 */
 :root {
-    /* 60% Dominante - Fundo */
     --cor-dominante: #F4EEDD; 
-    
-    /* 30% Secundária - Elementos de destaque e botões */
     --cor-secundaria: #D35400; 
-    
-    /* 10% Destaque/Acento - Textos principais e detalhes */
     --cor-acento: #1C1C1C; 
-    
-    /* Variáveis Extras de Apoio */
     --cor-fundo-card: #FFFFFF;
     --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ========================================================
-   2. RESET BÁSICO E LAYOUT GERAL
-======================================================== */
+/* Reset de informações e layout */
 * {
     margin: 0;
     padding: 0;
@@ -32,9 +21,7 @@ body {
     line-height: 1.6;
 }
 
-/* ========================================================
-   3. CABEÇALHO E NAVEGAÇÃO
-======================================================== */
+/* Cabeçalho */
 .cabecalho-principal {
     background-color: var(--cor-acento);
     color: var(--cor-dominante);
@@ -44,9 +31,24 @@ body {
     align-items: center;
 }
 
+.cabecalho-principal .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.cabecalho-principal .logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain; 
+    
+}
+
 .cabecalho-principal h1 {
     font-size: 1.8rem;
-    color: var(--cor-secundaria); /* Toque da cor do lobo no logo */
+    color: var(--cor-secundaria);
+    font-weight: 700;
 }
 
 .menu-navegacao ul {
@@ -67,9 +69,7 @@ body {
     color: var(--cor-secundaria);
 }
 
-/* ========================================================
-   4. SEÇÕES PRINCIPAIS (HERO E CARDS)
-======================================================== */
+/* Seções principais */
 .hero-section {
     text-align: center;
     padding: 5rem 2rem;
@@ -86,7 +86,6 @@ body {
     margin: 0 auto 2rem auto;
 }
 
-/* Botão utilizando a cor secundária (30%) */
 .btn-primary {
     background-color: var(--cor-secundaria);
     color: var(--cor-dominante);
@@ -99,17 +98,16 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #A04000; /* Tom mais escuro para o hover */
+    background-color: #A04000;
     transform: scale(1.05);
 }
 
-/* Layout de Cards (Demonstração de estrutura limpa) */
 .destaques {
     display: flex;
     justify-content: center;
     gap: 2rem;
     padding: 2rem 5%;
-    flex-wrap: wrap; /* Ajuda na responsividade inicial */
+    flex-wrap: wrap;
 }
 
 .card-info {
@@ -126,9 +124,7 @@ body {
     color: var(--cor-acento);
 }
 
-/* ========================================================
-   5. RODAPÉ
-======================================================== */
+/* Rodapé */
 footer {
     background-color: var(--cor-acento);
     color: var(--cor-dominante);
@@ -137,9 +133,7 @@ footer {
     margin-top: 3rem;
 }
 
-/* ========================================================
-   7. ESTILOS ESPECÍFICOS: QUEM SOMOS / INTEGRANTES
-======================================================== */
+/* Integrantes */
 
 .intro-quem-somos {
     text-align: center;
@@ -198,7 +192,6 @@ footer {
     gap: 0.8rem;
 }
 
-/* Botões sociais usando a cor 30% (Secundária) */
 .btn-social {
     text-decoration: none;
     font-size: 0.85rem;
@@ -215,7 +208,6 @@ footer {
     color: var(--cor-dominante);
 }
 
-/* Responsividade para a página de Integrantes */
 @media (max-width: 480px) {
     .grid-integrantes {
         flex-direction: column;
@@ -228,14 +220,15 @@ footer {
     }
 }
 
-/* ========================================================
-   8. ESTILOS ESPECÍFICOS: PÁGINA SOBRE
-======================================================== */
-
+/* Sobre */
 .container-sobre {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem 5%;
+}
+
+.conteudo-flex{
+    background-color: white;
 }
 
 .secao-sobre {
@@ -262,7 +255,6 @@ footer {
     border-color: var(--cor-secundaria);
 }
 
-/* Estilização da Lista de Tecnologias */
 .lista-tecnologias {
     list-style: none;
     display: grid;
@@ -278,7 +270,6 @@ footer {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* Estilização do Roadmap (Timeline simples) */
 .timeline {
     display: flex;
     flex-direction: column;
@@ -292,7 +283,6 @@ footer {
     position: relative;
 }
 
-/* Pequeno círculo da timeline */
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -304,7 +294,6 @@ footer {
     border-radius: 50%;
 }
 
-/* Responsividade para a Página Sobre */
 @media (max-width: 768px) {
     .secao-destaque {
         padding: 1.5rem;
@@ -315,10 +304,7 @@ footer {
     }
 }
 
-/* ========================================================
-   9. ESTILOS ESPECÍFICOS: FAQ (ACCORDION)
-======================================================== */
-
+/* Faq */
 .container-faq {
     max-width: 800px;
     margin: 0 auto;
@@ -366,14 +352,12 @@ footer {
     color: var(--cor-secundaria);
 }
 
-/* Ícone indicativo (pode ser substituído por imagem se preferir) */
 .faq-question::after {
     content: '+';
     font-size: 1.5rem;
     color: var(--cor-secundaria);
 }
 
-/* Estado ativo do botão */
 .faq-item.active .faq-question {
     background-color: var(--cor-secundaria);
     color: var(--cor-dominante);
@@ -384,7 +368,6 @@ footer {
     color: var(--cor-dominante);
 }
 
-/* Esconde a resposta por padrão */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -396,15 +379,11 @@ footer {
     padding: 1.5rem;
 }
 
-/* Quando o item está ativo, mostra a resposta */
 .faq-item.active .faq-answer {
-    max-height: 500px; /* Valor alto o suficiente para o conteúdo */
+    max-height: 500px;
 }
 
-/* ========================================================
-   10. ESTILOS ESPECÍFICOS: PÁGINA DE CONTATO
-======================================================== */
-
+/* Contato */
 .container-contato {
     display: flex;
     justify-content: space-between;
@@ -419,14 +398,14 @@ footer {
 }
 
 .info-contato h2 {
-    color: var(--cor-secundaria); /* 30% da paleta */
+    color: var(--cor-secundaria);
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
 .dados-contato {
     margin-top: 2rem;
-    background-color: var(--cor-acento); /* 10% - Contraste */
+    background-color: var(--cor-acento);
     color: var(--cor-dominante);
     padding: 2rem;
     border-radius: 10px;
@@ -464,10 +443,9 @@ footer {
 .grupo-input input:focus, 
 .grupo-input textarea:focus {
     outline: none;
-    border-color: var(--cor-secundaria); /* Feedback visual de foco */
+    border-color: var(--cor-secundaria);
 }
 
-/* Estilos de Feedback Visual (Critério 9) */
 .feedback {
     margin-top: 1rem;
     padding: 1rem;
@@ -488,7 +466,6 @@ footer {
     border: 1px solid #c3e6cb;
 }
 
-/* Responsividade do Contato (Critério 7) */
 @media (max-width: 768px) {
     .container-contato {
         flex-direction: column;
@@ -496,11 +473,8 @@ footer {
     }
 }
 
-/* ========================================================
-   6. RESPONSIVIDADE (Critério 7)
-======================================================== */
+/* Resposividade */
 
-/* Tablet (Telas até 768px) */
 @media (max-width: 768px) {
     .cabecalho-principal {
         flex-direction: column;
@@ -518,7 +492,6 @@ footer {
     }
 }
 
-/* Mobile (Telas até 480px) */
 @media (max-width: 480px) {
     .destaques {
         flex-direction: column;
@@ -526,7 +499,7 @@ footer {
     }
 
     .card-info {
-        width: 100%; /* Ocupa toda a tela no celular */
+        width: 100%;
     }
 
     .menu-navegacao ul {
