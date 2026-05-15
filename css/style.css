@@ -86,6 +86,14 @@ body {
     margin: 0 auto 2rem auto;
 }
 
+.hero-subtitulo {
+    font-size: 1.15rem;
+    max-width: 580px;
+    margin: 0 auto 2rem auto;
+    color: var(--cor-acento);
+    opacity: 0.8;
+}
+
 .btn-primary {
     background-color: var(--cor-secundaria);
     color: var(--cor-dominante);
@@ -102,6 +110,20 @@ body {
     transform: scale(1.05);
 }
 
+.titulo-destaques {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.card-icone {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
 .destaques {
     display: flex;
     justify-content: center;
@@ -114,7 +136,7 @@ body {
     background-color: var(--cor-fundo-card);
     padding: 2rem;
     border-radius: 8px;
-    width: 300px;
+    width: 400px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     border-top: 5px solid var(--cor-secundaria);
 }
@@ -221,91 +243,336 @@ footer {
 }
 
 /* Sobre */
-.container-sobre {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 5%;
-}
 
-.conteudo-flex{
-    background-color: var(--cor-fundo-card); /* Fundo branco/claro */
-    padding: 2rem;
-    border-radius: 12px;
-    border-left: 6px solid var(--cor-secundaria); /* Detalhe em laranja (30%) */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra leve para profundidade */
-    flex: 2;
+.container-sobre {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 5%;
 }
 
 .secao-sobre {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
+}
+
+/* Cabeçalho das Seções */
+.cabecalho-secao {
+    margin-bottom: 2.5rem;
+}
+
+.tag-projeto {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .secao-sobre h2 {
-    color: var(--cor-secundaria); /* 30% da paleta para títulos */
-    border-bottom: 2px solid var(--cor-secundaria);
+    color: var(--cor-acento);
+    border-bottom: 3px solid var(--cor-secundaria);
     display: inline-block;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
+    padding-bottom: 5px;
+    margin: 0;
+    font-size: 2.2rem;
 }
 
-.secao-destaque {
-    background-color: var(--cor-acento); /* 10% - Contraste forte */
-    color: var(--cor-dominante);
-    padding: 3rem;
-    border-radius: 15px;
-}
-
-.secao-destaque h2 {
-    color: var(--cor-secundaria);
-    border-color: var(--cor-secundaria);
-}
-
-.lista-tecnologias {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.lista-tecnologias li {
-    background: var(--cor-fundo-card);
-    padding: 1.5rem;
-    border-left: 5px solid var(--cor-secundaria);
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.timeline {
+.conteudo-impacto {
     display: flex;
-    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    background: var(--cor-fundo-card);
+    padding: 3.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.texto-principal {
+    flex: 2;
+}
+
+.texto-principal p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--cor-acento);
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+/* Estátistica */
+.card-estatistica {
+    flex: 1;
+    background: var(--cor-acento);
+    color: var(--cor-dominante);
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-estatistica .dado {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--cor-secundaria);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.card-estatistica p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Cards */
+.grid-solucao {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    border-left: 3px dashed var(--cor-acento);
-    padding-left: 2rem;
-    margin-left: 1rem;
+}
+
+.card-mini {
+    background: var(--cor-fundo-card);
+    padding: 2.5rem;
+    border-radius: 15px;
+    position: relative;
+    border-bottom: 5px solid var(--cor-secundaria);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.card-mini:hover {
+    transform: translateY(-8px);
+}
+
+.badge-icon {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--cor-secundaria);
+    background: rgba(211, 84, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.card-mini h3 {
+    margin-bottom: 1rem;
+    color: var(--cor-acento);
+}
+
+.card-mini p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Roadmap */
+.timeline {
+    position: relative;
+    max-width: 850px;
+    margin: 3rem auto 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--cor-fundo-card);
+    border-radius: 2px;
 }
 
 .timeline-item {
     position: relative;
+    margin-bottom: 3rem;
+    padding-left: 70px;
+    display: flex;
+    flex-direction: column;
 }
 
-.timeline-item::before {
-    content: '';
+.timeline-badge {
     position: absolute;
-    left: -2.45rem;
-    top: 0.5rem;
-    width: 15px;
-    height: 15px;
+    left: 0;
+    top: 5px;
+    width: 48px;
+    height: 48px;
     background-color: var(--cor-secundaria);
+    color: #fff;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(213, 84, 0, 0.2);
 }
 
-@media (max-width: 768px) {
-    .secao-destaque {
-        padding: 1.5rem;
+.timeline-conteudo {
+    background-color: var(--cor-fundo-card);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .conteudo-impacto {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
     }
-    
+
+    .card-estatistica {
+        width: 100%;
+    }
+
     .secao-sobre h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .timeline::before { left: 17px; }
+    .timeline-item { padding-left: 50px; }
+    .timeline-badge { width: 38px; height: 38px; top: 10px; }
+}
+
+/* Nossa solução */
+
+.container-solucao {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 5%;
+}
+
+.introducao-solucao {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+/* Grid layout dinâmico para os 4 pilares */
+.grid-pilares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.card-pilar {
+    background-color: var(--cor-fundo-card); /* #FFFFFF */
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(28, 28, 28, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border-top: 5px solid var(--cor-secundaria); /* Toque de 30% (Laranja) no topo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-pilar:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(211, 84, 0, 0.1); /* Sombra sutil em tom laranja */
+}
+
+.icone-pilar {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.card-pilar h3 {
+    color: var(--cor-acento); /* Texto 10% */
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.card-pilar p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
+/* Área de Destaque do Ranking */
+.box-destaque {
+    background-color: var(--cor-acento); /* Fundo 10% (Escuro) */
+    color: var(--cor-dominante); /* Texto 60% (Creme) */
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.box-destaque h2 {
+    color: var(--cor-secundaria); /* Destaque em Laranja */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.fluxo-ranking {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.etapa-ranking {
+    flex: 1;
+    min-width: 220px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid rgba(213, 84, 0, 0.2);
+}
+
+.etapa-ranking span {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cor-secundaria);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.etapa-ranking h4 {
+    margin: 0.8rem 0 0.5rem 0;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.etapa-ranking p {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+/* Ajustes de Responsividade */
+@media (max-width: 768px) {
+    .fluxo-ranking {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .etapa-ranking {
+        width: 100%;
     }
 }
 
