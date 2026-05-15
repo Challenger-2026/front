@@ -114,7 +114,7 @@ body {
     background-color: var(--cor-fundo-card);
     padding: 2rem;
     border-radius: 8px;
-    width: 600px;
+    width: 300px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     border-top: 5px solid var(--cor-secundaria);
 }
@@ -143,7 +143,7 @@ footer {
 .grid-integrantes {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Garante que os cards quebrem de linha se não couberem */
+    flex-wrap: wrap;
     gap: 2.5rem;
     padding: 0 5% 4rem 5%;
 }
@@ -155,7 +155,7 @@ footer {
     width: 280px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    border: 1px solid rgba(28, 28, 28, 0.1); /* 10% de detalhe escuro */
+    border: 1px solid rgba(28, 28, 28, 0.1);
 }
 
 .card-integrante:hover {
@@ -228,7 +228,12 @@ footer {
 }
 
 .conteudo-flex{
-    background-color: white;
+    background-color: var(--cor-fundo-card); /* Fundo branco/claro */
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 6px solid var(--cor-secundaria); /* Detalhe em laranja (30%) */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra leve para profundidade */
+    flex: 2;
 }
 
 .secao-sobre {
