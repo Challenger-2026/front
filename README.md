@@ -38,7 +38,7 @@ front-end/
 │   └── style.css            # Folha de estilo unificada (Global, Componentes e Responsividade)
 │
 ├── js/
-│   └── script.js            # Lógica comportamental em JavaScript (Interação do FAQ)
+│   └── script.js            # Lógica comportamental em JavaScript (Interação do FAQ e contato)
 │
 └── img/                     # Acervo de mídias do ecossistema
     └── Guara.png            # Logotipo oficial Lobo-guará Tech
