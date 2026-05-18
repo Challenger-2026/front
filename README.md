@@ -40,9 +40,8 @@ front-end/
 ├── js/
 │   └── script.js            # Lógica comportamental em JavaScript (Interação do FAQ)
 │
-└── assets/
-    └── img/                 # Acervo de mídias do ecossistema
-        ├── Guara.png        # Logotipo oficial Lobo-guará Tech
-        ├── Ana.jpeg         # Foto da integrante Ana
-        ├── Pic1.png         # Foto do integrante Lucas
-        └── Pic2.jpeg        # Foto do integrante Eduardo
+└── img/                     # Acervo de mídias do ecossistema
+    └── Guara.png            # Logotipo oficial Lobo-guará Tech
+    └── Ana.jpeg             # Foto da integrante Ana
+    └── Pic1.png             # Foto do integrante Lucas
+    └── Pic2.jpeg            # Foto do integrante Eduardo
