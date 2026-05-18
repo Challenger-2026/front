@@ -25,6 +25,7 @@ Para a construção desta interface moderna, responsiva e fluida, foram utilizad
 
 Abaixo está representada a arquitetura limpa de diretórios do repositório, garantindo organização e fácil manutenção do código-fonte:
 
+```text
 front-end/
 ├── index.html               # Página Inicial (apresentação e informações)
 ├── sobre.html               # Página Institucional (contexto, Missão e Roadmap)
