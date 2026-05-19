@@ -1,4 +1,5 @@
 /* Cores na regra 60/30/10 */
+
 :root {
     --cor-dominante: #F4EEDD; 
     --cor-secundaria: #D35400; 
@@ -7,7 +8,6 @@
     --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Reset de informações e layout */
 * {
     margin: 0;
     padding: 0;
@@ -22,6 +22,7 @@ body {
 }
 
 /* Cabeçalho */
+
 .cabecalho-principal {
     background-color: var(--cor-acento);
     color: var(--cor-dominante);
@@ -70,6 +71,7 @@ body {
 }
 
 /* Seções principais */
+
 .info-section {
     text-align: center;
     padding: 3.5rem 1rem;
@@ -147,6 +149,7 @@ body {
 }
 
 /* Rodapé */
+
 footer {
     background-color: var(--cor-acento);
     color: var(--cor-dominante);
@@ -188,8 +191,8 @@ footer {
 .foto-container img {
     width: 100%;
     height: 250px;
-    object-fit: cover; /* Garante que a foto não fique esticada */
-    filter: grayscale(20%); /* Toque artístico opcional */
+    object-fit: cover;
+    filter: grayscale(20%);
 }
 
 .info-integrante {
@@ -244,6 +247,7 @@ footer {
 }
 
 /* Cabeçalho das Seções */
+
 .cabecalho-secao {
     margin-bottom: 2.5rem;
 }
@@ -290,6 +294,7 @@ footer {
 }
 
 /* Estátistica */
+
 .card-estatistica {
     flex: 1;
     background: var(--cor-acento);
@@ -316,6 +321,7 @@ footer {
 }
 
 /* Cards */
+
 .grid-solucao {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -362,6 +368,7 @@ footer {
 }
 
 /* Roadmap */
+
 .timeline {
     position: relative;
     max-width: 850px;
@@ -424,7 +431,6 @@ footer {
     text-align: center;
 }
 
-/* Grid layout dinâmico para os 4 pilares */
 .grid-pilares {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -433,12 +439,12 @@ footer {
 }
 
 .card-pilar {
-    background-color: var(--cor-fundo-card); /* #FFFFFF */
+    background-color: var(--cor-fundo-card);
     padding: 2.5rem 2rem;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(28, 28, 28, 0.05);
     transition: transform 0.3s ease, border-color 0.3s ease;
-    border-top: 5px solid var(--cor-secundaria); /* Toque de 30% (Laranja) no topo */
+    border-top: 5px solid var(--cor-secundaria);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -447,7 +453,7 @@ footer {
 
 .card-pilar:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(211, 84, 0, 0.1); /* Sombra sutil em tom laranja */
+    box-shadow: 0 12px 25px rgba(211, 84, 0, 0.1);
 }
 
 .icone-pilar {
@@ -456,7 +462,7 @@ footer {
 }
 
 .card-pilar h3 {
-    color: var(--cor-acento); /* Texto 10% */
+    color: var(--cor-acento);
     font-size: 1.3rem;
     margin-bottom: 1rem;
 }
@@ -469,16 +475,17 @@ footer {
 }
 
 /* Área de Destaque do Ranking */
+
 .box-destaque {
-    background-color: var(--cor-acento); /* Fundo 10% (Escuro) */
-    color: var(--cor-dominante); /* Texto 60% (Creme) */
+    background-color: var(--cor-acento);
+    color: var(--cor-dominante);
     padding: 3rem 2rem;
     border-radius: 16px;
     text-align: center;
 }
 
 .box-destaque h2 {
-    color: var(--cor-secundaria); /* Destaque em Laranja */
+    color: var(--cor-secundaria);
     margin-bottom: 1.5rem;
     font-size: 2rem;
 }
@@ -532,6 +539,7 @@ footer {
 }
 
 /* Faq */
+
 .container-faq {
     max-width: 800px;
     margin: 0 auto;
@@ -611,6 +619,7 @@ footer {
 }
 
 /* Contato */
+
 .container-contato {
     display: flex;
     justify-content: space-between;

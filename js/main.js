@@ -53,7 +53,7 @@ const msgSucesso = document.getElementById('msg-sucesso');
             if (!nome && !email && !mensagem) {
                 msgErro.textContent = "Erro: Por favor, preencha o formulário antes de enviar.";
                 msgErro.style.display = 'block';
-                return; // Interrompe o envio
+                return;
             }
 
             if (!nome || !email || !mensagem) {
