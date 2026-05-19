@@ -15,18 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Scripts do Lobo-guará Tech carregados com sucesso!");
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    
-    const header = document.querySelector(".cabecalho-principal");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            header.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.3)";
-        } else {
-            header.style.boxShadow = "none";
-        }
-    });
-
-
 // Funcionalidade do FAQ
 
 const faqQuestions = document.querySelectorAll(".faq-question");
@@ -86,5 +74,4 @@ const msgSucesso = document.getElementById('msg-sucesso');
             form.reset();
             console.log("Formulário validado e enviado com sucesso!");
         });
-    }
-});
+    };
