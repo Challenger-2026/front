@@ -55,13 +55,13 @@ O desenvolvimento deste projeto foi idealizado e executado pela equipe de estuda
 * **Ana Carolina Orcelli Bautzer** — RM 570281
   *Turma: 1TDSPI* 👉 [LinkedIn](https://www.linkedin.com/in/ana-bautzer/) | 👉 [GitHub](https://github.com/anabautzer)
 
-* **Eduardo Lima de Souza** — RM 570412 
+* **Eduardo Lima de Souza** — RM 570412
   *Turma: 1TDSPI* 👉 [LinkedIn](https://www.linkedin.com/in/duduutech/) | 👉 [GitHub](https://github.com/duduutech)
 
-* **Lucas Costa Serrano** — RM 571016  
+* **Lucas Costa Serrano** — RM 571016
   *Turma: 1TDSPI* 👉 [LinkedIn](https://www.linkedin.com/in/lucas-costa-serrano-647327278/) | 👉 [GitHub](https://github.com/luckz4)
 
-* **Lucas Fortunato Brandão de Pinho** — RM 572660 
+* **Lucas Fortunato Brandão de Pinho** — RM 572660
   *Turma: 1TDSPI* 👉 [LinkedIn](https://www.linkedin.com/in/lucas-fortunato-317643397/) | 👉 [GitHub](https://github.com/Loutcoun)
 
 ---
