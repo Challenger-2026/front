@@ -45,7 +45,7 @@ front-end/
     └── Ana.jpeg             # Foto da integrante Ana
     └── Pic1.png             # Foto do integrante Lucas
     └── Pic2.jpeg            # Foto do integrante Eduardo
-
+```
 ---
 
 ## 👥 Autores e Créditos
