@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-    
-    const header = document.querySelector(".cabecalho-principal");
+// Fazer uma sombra quando desde a página
+
+const header = document.querySelector(".cabecalho-principal");
 
 
     window.addEventListener("scroll", () => {
@@ -11,9 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
             header.style.boxShadow = "none";
         }
     });
-
-    console.log("Scripts do Lobo-guará Tech carregados com sucesso!");
-});
 
 // Funcionalidade do FAQ
 
@@ -34,6 +31,43 @@ faqQuestions.forEach(question => {
 });
 
 // formulário
+
+const nome = document.querySelector('#nome')
+const email = document.querySelector('#email')
+const mensagem = document.querySelector('#mensagem')
+
+document.querySelector('form').addEventListener('submit', (e) =>{
+    if(nome.value == "" || email.value == "" || mensagem.value == "")
+        e.preventDefault();
+})
+
+document.querySelectorAll('span').forEach(e => e.style.color = 'red')
+
+nome.addEventListener('blur', () => {
+    if(nome.value == ""){
+        document.querySelector('#span1').innerHTML = 'O nome é obrigatório!'
+    }else{
+        document.querySelector('#span1').innerHTML = ''
+    }
+})
+
+email.addEventListener('blur', () => {
+    if(email.value == ""){
+        document.querySelector('#span2').innerHTML = 'O e-mail é obrigatório!'
+    }else{
+        document.querySelector('#span2').innerHTML = ''
+    }
+})
+
+mensagem.addEventListener('blur', () => {
+    if(mensagem.value == ""){
+        document.querySelector('#span3').innerHTML = 'A mensagem é obrigatório!'
+    }else{
+        document.querySelector('#span3').innerHTML = ''
+    }
+})
+
+// corrigir a parte de ajeitar a mensagem e verificando todas para tirar a mensagem
 
 const form = document.getElementById('form-contato');
 const msgErro = document.getElementById('msg-erro');
