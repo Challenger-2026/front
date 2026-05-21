@@ -8,11 +8,15 @@
     --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Informações gerais */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Cores do corpo */
 
 body {
     background-color: var(--cor-dominante);
@@ -246,7 +250,7 @@ footer {
     margin-bottom: 5rem;
 }
 
-/* Cabeçalho das Seções */
+/* Cabeçalho das seções do sobre */
 
 .cabecalho-secao {
     margin-bottom: 2.5rem;

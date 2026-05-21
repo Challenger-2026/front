@@ -1,4 +1,4 @@
-// Fazer uma sombra quando desde a página
+// Faz uma sombra quando desde a página
 
 const header = document.querySelector(".cabecalho-principal");
 
@@ -32,80 +32,143 @@ faqQuestions.forEach(question => {
 
 // formulário
 
-const nome = document.querySelector('#nome')
-const email = document.querySelector('#email')
-const mensagem = document.querySelector('#mensagem')
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById('form-contato');
+    const nome = document.getElementById('nome');
+    const email = document.getElementById('email');
+    const mensagem = document.getElementById('mensagem');
+    
+    const msgErro = document.getElementById('msg-erro');
+    const msgSucesso = document.getElementById('msg-sucesso');
+    
+    const span1 = document.getElementById('span1');
+    const span2 = document.getElementById('span2');
+    const span3 = document.getElementById('span3');
 
-document.querySelector('form').addEventListener('submit', (e) =>{
-    if(nome.value == "" || email.value == "" || mensagem.value == "")
-        e.preventDefault();
-})
+    // Constante sobre nome composto para validação
+    const regexNomeComposto = /^[A-Za-zÀ-ÖØ-öø-ÿ]+(\s+[A-Za-zÀ-ÖØ-öø-ÿ]+)+$/;
+    // Constante para validação da mensagem
+    const regexPeloMenosUmaFrase = /[A-Za-zÀ-ÖØ-öø-ÿ0-9].*(\.|\!|\?)/;
 
-document.querySelectorAll('span').forEach(e => e.style.color = 'red')
-
-nome.addEventListener('blur', () => {
-    if(nome.value == ""){
-        document.querySelector('#span1').innerHTML = 'O nome é obrigatório!'
-    }else{
-        document.querySelector('#span1').innerHTML = ''
+    // Estilização do span
+    function gerenciarEstiloSpan(span, textoErro) {
+        if (textoErro) {
+            span.textContent = textoErro;
+            span.style.display = 'block';
+            span.style.backgroundColor = '#f8d7da';
+            span.style.color = '#721c24';
+            span.style.border = '1px solid #f5c6cb';
+            span.style.padding = '8px';
+            span.style.borderRadius = '4px';
+            span.style.marginTop = '5px';
+            span.style.fontSize = '0.85rem';
+        } else {
+            span.textContent = '';
+            span.style.display = 'none';
+        }
     }
-})
 
-email.addEventListener('blur', () => {
-    if(email.value == ""){
-        document.querySelector('#span2').innerHTML = 'O e-mail é obrigatório!'
-    }else{
-        document.querySelector('#span2').innerHTML = ''
+    // Função para verificar se a caixa de erro grande deve sumir antes do envio
+    function checarEFecharErroGlobal() {
+        const nomeVal = nome.value.trim();
+        const emailVal = email.value.trim();
+        const mensagemVal = mensagem.value.trim();
+
+        if (
+            nomeVal && emailVal && mensagemVal && 
+            regexNomeComposto.test(nomeVal) && 
+            emailVal.includes('@') && emailVal.includes('.') &&
+            regexPeloMenosUmaFrase.test(mensagemVal)
+        ) {
+            msgErro.style.display = 'none';
+        }
     }
-})
 
-mensagem.addEventListener('blur', () => {
-    if(mensagem.value == ""){
-        document.querySelector('#span3').innerHTML = 'A mensagem é obrigatório!'
-    }else{
-        document.querySelector('#span3').innerHTML = ''
-    }
-})
+    // --- Validações ao sair do campo (Blur) ---
+    nome.addEventListener('blur', () => {
+        const nomeVal = nome.value.trim();
+        if (nomeVal === "") {
+            gerenciarEstiloSpan(span1, 'O nome é obrigatório!');
+        } else if (!regexNomeComposto.test(nomeVal)) {
+            gerenciarEstiloSpan(span1, 'Por favor, insira seu nome completo (nome e sobrenome).');
+        } else {
+            gerenciarEstiloSpan(span1, '');
+            checarEFecharErroGlobal();
+        }
+    });
 
-// corrigir a parte de ajeitar a mensagem e verificando todas para tirar a mensagem
+    email.addEventListener('blur', () => {
+        const emailVal = email.value.trim();
+        if (emailVal === "") {
+            gerenciarEstiloSpan(span2, 'O e-mail é obrigatório!');
+        } else if (!emailVal.includes('@') || !emailVal.includes('.')) {
+            gerenciarEstiloSpan(span2, 'Por favor, insira um e-mail válido.');
+        } else {
+            gerenciarEstiloSpan(span2, '');
+            checarEFecharErroGlobal();
+        }
+    });
 
-const form = document.getElementById('form-contato');
-const msgErro = document.getElementById('msg-erro');
-const msgSucesso = document.getElementById('msg-sucesso');
+    mensagem.addEventListener('blur', () => {
+        const mensagemVal = mensagem.value.trim();
+        if (mensagemVal === "") {
+            gerenciarEstiloSpan(span3, 'A mensagem é obrigatória!');
+        } else if (!regexPeloMenosUmaFrase.test(mensagemVal)) {
+            gerenciarEstiloSpan(span3, 'Sua mensagem deve conter pelo menos uma frase completa terminada com pontuação (ex: ".", "!" ou "?").');
+        } else {
+            gerenciarEstiloSpan(span3, '');
+            checarEFecharErroGlobal();
+        }
+    });
 
+    // --- Validação no Envio (Submit) ---
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-
-            const nome = document.getElementById('nome').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const mensagem = document.getElementById('mensagem').value.trim();
-
+            
+            const nomeVal = nome.value.trim();
+            const emailVal = email.value.trim();
+            const mensagemVal = mensagem.value.trim();
+            
+            // Reseta os alertas principais
             msgErro.style.display = 'none';
             msgSucesso.style.display = 'none';
 
-            if (!nome && !email && !mensagem) {
-                msgErro.textContent = "Erro: Por favor, preencha o formulário antes de enviar.";
-                msgErro.style.display = 'block';
-                return;
-            }
-
-            if (!nome || !email || !mensagem) {
+            // 1. Verifica campos vazios
+            if (!nomeVal || !emailVal || !mensagemVal) {
                 msgErro.textContent = "Erro: Todos os campos são obrigatórios.";
                 msgErro.style.display = 'block';
                 return;
             }
 
-            if (!email.includes('@') || !email.includes('.')) {
+            // 2. Verifica se o nome é composto
+            if (!regexNomeComposto.test(nomeVal)) {
+                msgErro.textContent = "Erro: Por favor, preencha seu nome completo.";
+                msgErro.style.display = 'block';
+                return;
+            }
+
+            // 3. Verifica email válido
+            if (!emailVal.includes('@') || !emailVal.includes('.')) {
                 msgErro.textContent = "Erro: Por favor, insira um e-mail válido.";
                 msgErro.style.display = 'block';
                 return;
             }
 
-            msgSucesso.style.display = 'block';
-            
+            // 4. Verifica se a mensagem contém uma frase válida
+            if (!regexPeloMenosUmaFrase.test(mensagemVal)) {
+                msgErro.textContent = "Erro: A mensagem precisa conter pelo menos uma frase concluída.";
+                msgErro.style.display = 'block';
+                return;
+            }
 
+            gerenciarEstiloSpan(span1, '');
+            gerenciarEstiloSpan(span2, '');
+            gerenciarEstiloSpan(span3, '');
+
+            msgSucesso.style.display = 'block';
             form.reset();
-            console.log("Formulário validado e enviado com sucesso!");
+            console.log("Formulário do Lobo-guará Tech enviado com sucesso!");
         });
-    };
+    }
+});
