@@ -103,7 +103,7 @@ Abaixo estão as representações visuais das telas que compõem a plataforma, d
 ![Demonstração da Página Sobre](img/sobre2.png)  
 ![Demonstração da Página Sobre](img/sobre3.png)  
 ![Demonstração da Página Sobre](img/sobre4.png)     
-*Legenda: Apresentação da missão, visão, valores do grupo e a conexão conceitual entre a Sociedade 5.0 e a preservação ambiental.*
+*Legenda: Apresentação do contexto e problema, os tipos de solução e um roadmap de desenvolvimento.*
 
 ### 🚀 3. Detalhamento da Funcionalidade (`solucao.html`)
 ![Demonstração da Página de Solução](img/solucao1.png)
