@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Constante sobre nome composto para validação
     const regexNomeComposto = /^[A-Za-zÀ-ÖØ-öø-ÿ]+(\s+[A-Za-zÀ-ÖØ-öø-ÿ]+)+$/;
-    // Constante para validação da mensagem
-    const regexPeloMenosUmaFrase = /[A-Za-zÀ-ÖØ-öø-ÿ0-9].*(\.|\!|\?)/;
 
     // Estilização do span
     function gerenciarEstiloSpan(span, textoErro) {
@@ -78,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nomeVal && emailVal && mensagemVal && 
             regexNomeComposto.test(nomeVal) && 
             emailVal.includes('@') && emailVal.includes('.') &&
-            regexPeloMenosUmaFrase.test(mensagemVal)
+            validarTamanhoMensagem(mensagemVal)
         ) {
             msgErro.style.display = 'none';
         }
@@ -113,13 +111,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const mensagemVal = mensagem.value.trim();
         if (mensagemVal === "") {
             gerenciarEstiloSpan(span3, 'A mensagem é obrigatória!');
-        } else if (!regexPeloMenosUmaFrase.test(mensagemVal)) {
-            gerenciarEstiloSpan(span3, 'Sua mensagem deve conter pelo menos uma frase completa terminada com pontuação (ex: ".", "!" ou "?").');
+        } else if (!validarTamanhoMensagem(mensagemVal)) {
+            gerenciarEstiloSpan(span3, 'Sua mensagem deve ser mais detalhada (mínimo de 30 caracteres)');
         } else {
             gerenciarEstiloSpan(span3, '');
             checarEFecharErroGlobal();
         }
     });
+
+    // Conta os caracteres 
+    function validarTamanhoMensagem(texto) {
+        const textoLimpo = texto.trim();
+        //Checagem por caracteres
+        const temBastanteCaracteres = textoLimpo.length >= 30;
+        return temBastanteCaracteres
+    }
 
     // --- Validação no Envio (Submit) ---
     if (form) {
@@ -134,30 +140,30 @@ document.addEventListener("DOMContentLoaded", () => {
             msgErro.style.display = 'none';
             msgSucesso.style.display = 'none';
 
-            // 1. Verifica campos vazios
+            // Verifica campos vazios
             if (!nomeVal || !emailVal || !mensagemVal) {
                 msgErro.textContent = "Erro: Todos os campos são obrigatórios.";
                 msgErro.style.display = 'block';
                 return;
             }
 
-            // 2. Verifica se o nome é composto
+            // Verifica se o nome é composto
             if (!regexNomeComposto.test(nomeVal)) {
                 msgErro.textContent = "Erro: Por favor, preencha seu nome completo.";
                 msgErro.style.display = 'block';
                 return;
             }
 
-            // 3. Verifica email válido
+            // Verifica email válido
             if (!emailVal.includes('@') || !emailVal.includes('.')) {
                 msgErro.textContent = "Erro: Por favor, insira um e-mail válido.";
                 msgErro.style.display = 'block';
                 return;
             }
 
-            // 4. Verifica se a mensagem contém uma frase válida
-            if (!regexPeloMenosUmaFrase.test(mensagemVal)) {
-                msgErro.textContent = "Erro: A mensagem precisa conter pelo menos uma frase concluída.";
+            // Verifica se a mensagem contém uma frase válida
+            if (!validarTamanhoMensagem(mensagemVal)) {
+                msgErro.textContent = "Erro: A mensagem precisa ser mais detalhada (mínimo de 30 caracteres).";
                 msgErro.style.display = 'block';
                 return;
             }
